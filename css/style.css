@@ -1,0 +1,440 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: azure;
+}
+
+
+.contenedor {
+    width: 100%;
+    height: 100%;
+    max-width: 1170px;
+    margin: auto;
+}
+
+/** Lightbox **/
+
+.imagen-modal {
+    width: 90%;
+    max-width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s ease;
+  }
+
+#cerrar_modal {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    color: #303133;
+    font-size: 36px;
+    background: #fff;
+    display: inline-block;
+    padding: 12px 14px;
+    cursor: pointer;
+  }
+
+.overlay {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 22, 24, 0.4);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+.overlay:hover {
+    opacity: 1;
+  }
+
+.overlay i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: white;
+  }
+
+/** Cabecera **/
+
+header {
+    width: 100%;
+    height: 200px;
+    background-color: #252424;
+}
+
+header .contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .contenedor .burger-menu {
+    width: 100%;
+    z-index: 99;
+    padding: 0 180px;
+    display: none;
+}
+
+header .contenedor .burger-menu .burger{
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+
+    transition: all 0.5s ease-in-out;
+}
+
+header .contenedor .burger-menu .burger:hover{
+    color: #EBA900;
+}
+
+header .contenedor .burger-menu .burger i{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header .contenedor .burger-menu .slideMenu {
+    width: 100%;
+    background-color: #080808;
+    position: absolute;
+    top: 200px;
+    left: -100%;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+}
+
+header .contenedor .burger-menu .active {
+    left: 0;
+}
+
+header .contenedor .burger-menu .slideMenu .menu {
+    display: flex;
+    flex-direction: column;
+}
+
+header .contenedor .burger-menu .slideMenu .menu a {
+    display: block;
+    padding: 10px 0;
+    border-top: 1px solid #eaeaea;
+}
+
+header .contenedor .burger-menu .slideMenu .menu a:first-child {
+    border-top: none;
+}
+
+
+.logo img {
+    width: 400px;
+    transition: all 0.5s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.menu a:first-child {
+    margin-left: 0;
+}
+
+.menu a:hover {
+    color: #EBA900;
+    transform: scale(1.2, 1.2);
+}
+
+.margin a{
+    margin: 0;
+}
+
+.margin a:hover{
+    color: #EBA900;
+    transform: none;
+}
+
+@media all and (max-width: 830px) {
+    header .contenedor {
+        justify-content: center;
+    }
+
+    .menu-oculto {
+        display: none;
+    }
+
+    header .contenedor .burger-menu {
+        display: block;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .logo img {
+        width: 300px;
+    }
+}
+
+@media all and (max-width: 280px) {
+    .logo img {
+        width: 260px;
+    }
+}
+
+/** Fin de Cabecera **/
+
+/** Banner Principal **/
+
+.principal {
+    width: 100%;
+    height: 500px;
+    background-image: url(../img/gabinete-rgb.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+.filtro {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.arreglo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.arreglo p {
+    color: white;
+    font-family: 'Black Ops One', cursive;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.arreglo h2 {
+    font-size: 42px;
+    color: white;
+    text-transform: uppercase;
+    padding: 45px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.arreglo a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    padding: 10px 50px;
+    background-color: rgba(1, 1, 1, 0.4);
+    border: 2px solid white;
+    border-radius: 10px;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.arreglo a:hover {
+    transform: scale(1.2, 1.2);
+    border: 2px solid #EBA900;
+    color: #EBA900;
+}
+
+@media all and (max-width: 500px) {
+    .arreglo p {
+        font-size: 14px;
+    }
+
+    .arreglo h2 {
+        padding: 35px;
+    }
+}
+
+@media all and (max-width: 280px) {
+    .arreglo p {
+        font-size: 12px;
+    }
+
+    .arreglo h2 {
+        padding: 15px;
+    }
+}
+
+/** Fin del Banner Principal **/
+
+/** Galería **/
+
+.galeria {
+    width: 100%;
+    background-color: #A2A2A2;
+}
+
+.galeria > .contenedor {
+    padding: 50px 0;
+}
+
+.titulo-galeria {
+    text-align: center;
+    font-size: 18px;
+    color: #1A1919;
+    margin-bottom: 40px;
+}
+
+.tres {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col {
+    overflow: hidden;
+    width: 40%;
+    min-width: 460px;
+}
+
+.imagenes {
+    display: flex;
+    width: 300%;
+}
+
+.imagenes .slide {
+    width: 100%;
+    min-height: 350px;
+    background-position: center;
+    background-size: cover;
+
+    transition: all 0.7s ease-in-out;
+}
+
+.imagenes div:hover {
+    transform: scale(1.2, 1.2);
+    filter: contrast(150%);
+}
+
+.galeria1 {
+    background-image: url(../img/gabinete-rgb2.jpg);
+}
+
+.galeria2 {
+    background-image: url(../img/ensamble.jpg);
+}
+
+.galeria3 {
+    background-image: url(../img/build2.jpg);
+}
+
+.galeria4 {
+    background-image: url(../img/build1.jpg);
+}
+
+.galeria5 {
+    background-image: url(../img/gabinete1.jpg);
+}
+
+.galeria6 {
+    background-image: url(../img/build3.jpg);
+}
+
+@media all and (max-width: 936px) {
+    .tres {
+        justify-content: center;
+    }
+
+    .margin-top {
+        margin-top: 50px;
+    }
+}
+
+@media all and (max-width: 512px) {
+    .imagenes .slide {
+        min-height: 200px;
+    }
+    .col {
+        min-width: 300px;
+    }
+}
+
+@media all and (max-width: 360px) {
+    .imagenes div {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+
+/** Fin de Galería **/
+
+/** Pie de Página **/
+
+.top-footer {
+    width: 100%;
+    height: 25px;
+    background-color: #303030;
+}
+
+.center-footer {
+    background-color: black;
+    padding: 20px;
+}
+
+.center-footer > .contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.center-footer .widget {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+.center-footer .widget h4 {
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+.center-footer .widget p {
+    font-size: 14px;
+}
+
+.bottom-footer {
+    width: 100%;
+    height: 25px;
+    background-color: #303030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-footer p {
+    font-size: 14px;
+}
